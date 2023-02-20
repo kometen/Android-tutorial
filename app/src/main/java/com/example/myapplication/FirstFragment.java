@@ -33,11 +33,11 @@ public class FirstFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.nextButton.setOnClickListener(new View.OnClickListener() {
+        binding.toastButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(FirstFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
+            public void onClick(View v) {
+                Toast myToast = Toast.makeText(getActivity(), "Hello Toast!", Toast.LENGTH_SHORT);
+                myToast.show();
             }
         });
 
@@ -48,11 +48,11 @@ public class FirstFragment extends Fragment {
             }
         });
 
-        binding.toastButton.setOnClickListener(new View.OnClickListener() {
+        binding.nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Toast myToast = Toast.makeText(getActivity(), "Hello Toast!", Toast.LENGTH_SHORT);
-                myToast.show();
+            public void onClick(View view) {
+                NavHostFragment.findNavController(FirstFragment.this)
+                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
             }
         });
     }
@@ -65,8 +65,8 @@ public class FirstFragment extends Fragment {
 
     private void countMe(View view) {
         String countString = showCountTextView.getText().toString();
-        Integer count = Integer.parseInt(countString);
+        int count = Integer.parseInt(countString);
         count++;
-        showCountTextView.setText(count.toString());
+        showCountTextView.setText(Integer.toString(count));
     }
 }
