@@ -64,9 +64,9 @@ public class FirstFragment extends Fragment {
     }
 
     private void countMe(View view) {
-        String countString = showCountTextView.getText().toString();
+        String countString = binding.textviewFirst.getText().toString();
         int count = Integer.parseInt(countString);
         count++;
-        showCountTextView.setText(Integer.toString(count));
+        binding.textviewFirst.setText(Integer.toString(count));
     }
 }
