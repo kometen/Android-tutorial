@@ -48,7 +48,7 @@ public class FirstFragment extends Fragment {
             }
         });
 
-        binding.nextButton.setOnClickListener(new View.OnClickListener() {
+        binding.randomButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(FirstFragment.this)
