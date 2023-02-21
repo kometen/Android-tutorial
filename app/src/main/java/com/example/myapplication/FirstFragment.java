@@ -49,6 +49,7 @@ public class FirstFragment extends Fragment {
         });
 
         binding.randomButton.setOnClickListener(new View.OnClickListener() {
+            //int currentCount = Integer.parseInt(showCountTextView.getText().toString());
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(FirstFragment.this)
