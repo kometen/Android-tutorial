@@ -13,7 +13,11 @@
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            app:destination="@id/SecondFragment" >
+            <argument
+                android:name="myArg"
+                android:defaultValue="0" />
+        </action>
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
@@ -25,8 +29,7 @@
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
         <argument
-            android:name="myArg"
-            app:argType="integer"
-            android:defaultValue="0" />
+            android:name="myCounter"
+            app:argType="integer" />
     </fragment>
 </navigation>
