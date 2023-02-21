@@ -12,6 +12,8 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.myapplication.databinding.FragmentSecondBinding;
 
+import java.util.Random;
+
 public class SecondFragment extends Fragment {
 
     private FragmentSecondBinding binding;
@@ -29,9 +31,19 @@ public class SecondFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-/*        int count = SecondFragmentArgs.fromBundle(getArguments()).getMyCounter();
+        int count = SecondFragmentArgs.fromBundle(getArguments()).getMyCounter();
         String countText = getString(R.string.random_heading, count);
-        TextView headerView = view.getRootView().findViewById(R.id.textview_header);*/
+        TextView headerView = view.getRootView().findViewById(R.id.textview_header);
+        headerView.setText(countText);
+
+        Random random = new Random();
+        Integer randomNumber = 0;
+        if (count > 0) {
+            randomNumber = random.nextInt(count + 1);
+        }
+
+        TextView randomView = view.getRootView().findViewById(R.id.textview_random);
+        randomView.setText(randomNumber.toString());
 
         binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
             @Override
